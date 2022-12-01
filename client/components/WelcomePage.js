@@ -5,6 +5,7 @@ import { Login, Signup } from './Auth';
 import EventSummary from './EventSummary';
 import UserHome from './UserHome';
 import { Navbar } from './NavBar';
+import AllVenues from './AllVenues';
 
 const WelcomePage = (props) => {
   return (
@@ -28,6 +29,7 @@ export const AllRoutes = () => {
             <Route path="/caterer" element={<AllCaterer />} />
             <Route path="/eventSummary" element={<EventSummary />} />
             <Route path="/my-account" element={<UserHome />} />
+            <Route path="/allVenues" element={<AllVenues />} />
           </Routes>
         </main>
       </div>
