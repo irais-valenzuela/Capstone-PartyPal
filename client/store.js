@@ -1,19 +1,20 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux';
-import reducer from './redux/auth';
-import axios from 'axios'
+import authReducer from './redux/auth';
+import axios from 'axios';
 import thunkMiddleware from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 
-// let middleware = [
-//   thunkMiddleware.withExtraArgument({ axios }),
-// ]
+export const reducer = combineReducers({
+  authReducer,
+});
 
 const store = createStore(
   reducer,
   applyMiddleware(
     thunkMiddleware.withExtraArgument({ axios }),
-    createLogger()
+    createLogger({ collapsed: true }) // QUESTION: not sure should we keep the argument
   )
 );
 
 export default store;
+export * from './redux/auth';

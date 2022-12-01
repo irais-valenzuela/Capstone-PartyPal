@@ -1,8 +1,6 @@
 import axios from 'axios';
-import history from '../history';
 
 const TOKEN = 'token';
-
 /**
  * ACTION TYPES
  */
@@ -42,7 +40,6 @@ export const authenticate =
       });
       window.localStorage.setItem(TOKEN, res.data.token);
       dispatch(me());
-      // history.push('/login');
     } catch (authError) {
       return dispatch(setAuth({ error: authError }));
     }
@@ -50,7 +47,6 @@ export const authenticate =
 
 export const logout = () => {
   window.localStorage.removeItem(TOKEN);
-  history.push('/login');
   return {
     type: SET_AUTH,
     auth: {},
@@ -60,7 +56,7 @@ export const logout = () => {
 /**
  * REDUCER
  */
-export default function reducer(state = {}, action) {
+export default function authReducer(state = {}, action) {
   console.log('action', action);
   switch (action.type) {
     case SET_AUTH:
