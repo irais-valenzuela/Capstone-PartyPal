@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { logout } from '../redux/auth';
+import { Link, BrowserRouter, Routes, Route } from 'react-router-dom';
+import { logout } from '../redux/store';
 import Button from 'react-bootstrap/Button';
 
 const Navbar = ({ handleLogout, isLoggedIn }) => {
@@ -25,9 +25,9 @@ const Navbar = ({ handleLogout, isLoggedIn }) => {
             </Link>
           </li>
           <li>
-            {/* <Link to='/login'> */}
-            <Button onClick={(event) => handleLogout(event)}>Logout</Button>
-            {/* </Link> */}
+            <Link to='/'>
+              <Button onClick={handleLogout}>Logout</Button>
+            </Link>
           </li>
         </ul>
       ) : (
@@ -60,12 +60,9 @@ const mapState = (state) => {
   };
 };
 
-const mapDispatch = (dispatch, { history }) => {
+const mapDispatch = (dispatch) => {
   return {
-    handleLogout: (event) => {
-      event.preventDefault();
-      dispatch(logout(history));
-    },
+    handleLogout: () => dispatch(logout()),
   };
 };
 
