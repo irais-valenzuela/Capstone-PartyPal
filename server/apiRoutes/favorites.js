@@ -6,14 +6,9 @@ const { requireToken } = require('./gateKeepingMiddleware');
 favoritesRouter.get('/:userId', requireToken, async (req, res, next) => {
   try {
     const { userId } = req.params;
-    const user = await User.findByToken(req.headers.authorization);
-    console.log('INSIDE favoriteRouter --- userId', userId);
-    console.log('INSIDE favoriteRouter --- user', user.id);
-
-    const userFavorite = await Favorite.findAll({ where: { userId: user.id } });
+    const userFavorite = await Favorite.findAll({ where: { userId: userId } });
     // userFavorite is an array with objects(favorite.id, favorite.name)
     if (userFavorite) {
-      console.log('userFavorite ---', userFavorite);
       res.send(userFavorite);
     } else {
       res.send('no favorite');

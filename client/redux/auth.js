@@ -63,6 +63,7 @@ export const authenticate =
 export const logout = () => {
   window.localStorage.removeItem(TOKEN);
   window.location.reload();
+
   return {
     type: SET_AUTH,
     auth: {},

@@ -24,20 +24,11 @@ const UserHome = (props) => {
     deleteCatererLikedItem,
     deleteVenueLikedItem,
   } = props;
-  console.log(
-    'favorites inside UserHome >>>',
-    'venues =',
-    venues,
-    'caterers =',
-    caterers
-  );
+
   useEffect(() => {
     if (id) {
-      const fetchData = async () => {
-        await getEvents(id);
-        await getFavorites(id);
-      };
-      fetchData();
+      getEvents(id);
+      getFavorites(id);
     }
   }, [id]);
 
@@ -187,7 +178,6 @@ const UserHome = (props) => {
 };
 
 const mapState = (state) => {
-  console.log('UserHome mapState ==== state =', state);
   return {
     user: state.auth,
     events: state.events,
