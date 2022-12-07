@@ -128,17 +128,10 @@ const SingleVenue = (props) => {
               : 'No information available'}
           </Card.Text>
           <Card.Text>
-            <Box component='fieldset' mb={3} borderColor='transparent'>
-              <Typography component='legend'>
-                <strong>Ratings </strong>
-              </Typography>
-              <Rating
-                name='read-only'
-                precision={0.5}
-                value={rating}
-                readOnly
-              />
-            </Box>
+            <Typography component='legend'>
+              <strong>Ratings </strong>
+            </Typography>
+            <Rating name='read-only' precision={0.5} value={rating} readOnly />
           </Card.Text>
           <Card.Text>
             <strong>Reviews:</strong>
