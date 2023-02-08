@@ -7,6 +7,7 @@ const TOKEN = process.env.YELP_TOKEN;
 
 const userSearch = (queryType, userSearchInput) => {
   const { service, location, price } = userSearchInput;
+  console.log('price', userSearchInput)
   if (queryType === "all") {
     return `{
       search(term: "${service}", location: "${location}", categories: "venues", price: "${price}", limit: 50) {
