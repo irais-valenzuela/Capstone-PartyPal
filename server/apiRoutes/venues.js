@@ -1,14 +1,15 @@
-const venuesRouter = require('express').Router();
-const axios = require('axios');
+const venuesRouter = require("express").Router();
+const axios = require("axios");
 
-require('dotenv').config();
+require("dotenv").config();
 
-const TOKEN = process.env.VENUES_YELP_TOKEN
+const TOKEN = process.env.YELP_TOKEN;
 
 const userSearch = (queryType, userSearchInput) => {
-  if (queryType === 'all') {
+  const { service, location, price } = userSearchInput;
+  if (queryType === "all") {
     return `{
-      search(term: "${userSearchInput.service}", location: "${userSearchInput.location}", categories: "venues", price: "${userSearchInput.price}", limit: 50) {
+      search(term: "${service}", location: "${location}", categories: "venues", price: "${price}", limit: 50) {
         total
         business {
           id
@@ -85,10 +86,10 @@ const userSearch = (queryType, userSearchInput) => {
 
 const getVenues = async (queryType, userSearchInput) => {
   const options = {
-    method: 'POST',
-    url: 'https://api.yelp.com/v3/graphql',
+    method: "POST",
+    url: "https://api.yelp.com/v3/graphql",
     headers: {
-      'content-type': 'application/graphql',
+      "content-type": "application/graphql",
       Authorization: `Bearer ${TOKEN}`,
     },
     data: userSearch(queryType, userSearchInput),
@@ -105,9 +106,9 @@ const getVenues = async (queryType, userSearchInput) => {
     });
 };
 
-venuesRouter.post('/', async (req, res, next) => {
+venuesRouter.post("/", async (req, res, next) => {
   try {
-    const queryType = 'all';
+    const queryType = "all";
     const userSearchInput = req.body;
     const data = await getVenues(queryType, userSearchInput);
     if (data.errors) {
@@ -120,10 +121,10 @@ venuesRouter.post('/', async (req, res, next) => {
   }
 });
 
-venuesRouter.post('/:id', async (req, res, next) => {
+venuesRouter.post("/:id", async (req, res, next) => {
   try {
     const yelpId = req.body.id;
-    const queryType = 'single';
+    const queryType = "single";
     const data = await getVenues(queryType, yelpId);
     res.send(data).status(200);
   } catch (error) {

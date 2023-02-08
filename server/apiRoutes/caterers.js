@@ -74,7 +74,8 @@ const userSearch = (userSearchInput, type) => {
   }
 };
 
-const TOKEN = process.env.CATERER_YELP_TOKEN
+const TOKEN = process.env.YELP_TOKEN
+
 const getCaterers = async (userSearchInput, queryType) => {
   const options = {
     method: 'POST',
