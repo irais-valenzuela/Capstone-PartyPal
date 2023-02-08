@@ -13,6 +13,8 @@ import Rating from '@material-ui/lab/Rating';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 
+//comment
+
 function AllCaterers(props) {
   const [price, setPrice] = useState(() => {
     const priceValue = window.localStorage.getItem('price');
