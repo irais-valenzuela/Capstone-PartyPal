@@ -12,21 +12,21 @@ const allMusiciansActionCreator = (musicians) => {
 };
 
 //thunk
-export const allMusicians = (requestInfo) => {
+export const fetchMusiciansThunk = (requestInfo) => {
   return async (dispatch) => {
     try {
       const { data } = await axios.post("/api/musicians", requestInfo);
-      console.log("data in all musicians thunk", data);
-      dispatch(allMusiciansActionCreator(data));
+      const businessArray = data.data.search.business;
+      console.log("data in all musicians thunk", businessArray);
+      dispatch(allMusiciansActionCreator(businessArray));
     } catch (error) {
       console.error(error);
     }
   };
 };
 
-const initialState = [];
 
-export const musicians = (initialState, action) => {
+export const musicians = (initialState = [], action) => {
   switch (action.type) {
     case GET_ALL_MUSICIANS:
       return action.musicians;

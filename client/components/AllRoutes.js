@@ -16,6 +16,7 @@ import ResponsiveNav from './ResponsiveNav';
 import { connect } from 'react-redux';
 import { me } from '../redux/auth';
 import { Footer } from './Footer';
+import AllMusicians from './AllMusicians';
 
 export const AllRoutes = (props) => {
   useEffect(() => {
@@ -38,6 +39,7 @@ export const AllRoutes = (props) => {
             <Route path='/account' component={UserHome} />
             <Route path='/new-event' component={EventForm} />
             <Route path='/editEvent/:id' component={EventEditForm} />
+            <Route path='/allMusicians' component={AllMusicians} />
           </Switch>
         ) : (
           <Switch>
@@ -46,6 +48,7 @@ export const AllRoutes = (props) => {
             <Route path='/singleCaterer/:id' component={SingleCaterer} />
             <Route path='/allVenues' component={AllVenues} />
             <Route path='/singleVenue/:id' component={SingleVenue} />
+            <Route path='/allMusicians' component={AllMusicians} />
             <Route path='/start' component={StartForm} />
             <Route path='/login' component={Login} />
             <Route path='/signup' component={Signup} />
