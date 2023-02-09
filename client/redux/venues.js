@@ -28,7 +28,7 @@ export const getVenuesThunk = ({ location, service, price }, history) => {
   };
 };
 
-const venues = (state = [], action) => {
+export const venues = (state = [], action) => {
   switch (action.type) {
     case GET_VENUES:
       return action.venues;
@@ -37,4 +37,4 @@ const venues = (state = [], action) => {
   }
 };
 
-export default venues;
+

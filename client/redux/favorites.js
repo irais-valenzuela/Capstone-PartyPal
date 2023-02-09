@@ -90,7 +90,7 @@ export const deleteCatererLikedItem = (favoriteId) => {
   };
 };
 
-const favorites = (state = {}, action) => {
+export const favorites = (state = {}, action) => {
   switch (action.type) {
     case GET_FAVORITE_VENUES:
       const venues = action.venues;
@@ -113,4 +113,4 @@ const favorites = (state = {}, action) => {
   }
 };
 
-export default favorites;
+

@@ -20,7 +20,7 @@ export const getSingleVenueThunk = (yelpId) => {
   };
 };
 
-const singleVenue = (state = {}, action) => {
+export const singleVenue = (state = {}, action) => {
   switch (action.type) {
     case GET_SINGLE_VENUE:
       return action.venue;
@@ -28,5 +28,3 @@ const singleVenue = (state = {}, action) => {
       return state;
   }
 };
-
-export default singleVenue
