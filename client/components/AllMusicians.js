@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { fetchMusiciansThunk } from "../redux/musicians";
 import { connect } from "react-redux";
 
 const AllMusicians = (props) => {
+  console.log("props", props);
   const handleClick = () => {
     console.log("in all musicians");
     props.getMusicians({
@@ -12,12 +13,17 @@ const AllMusicians = (props) => {
       service: "entertainment",
     });
   };
+
+  useEffect(() => {
+  //  const {location, service} = props.startForm
+    props.getMusicians()
+  }, []);
   return (
     <div>
       {props.musicians.map((musician) => {
         return (
           <div key={musician.id}>
-            <p>{(musician.name)}</p>
+            <p>{musician.name}</p>
           </div>
         );
       })}
@@ -30,6 +36,7 @@ const AllMusicians = (props) => {
 const mapStateToProps = (state) => {
   return {
     musicians: state.musicians,
+    startForm: state.startFormReducer,
   };
 };
 
