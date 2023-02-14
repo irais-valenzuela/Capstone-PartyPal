@@ -16,14 +16,14 @@ const Entertainment = (props) => {
 
   useEffect(() => {
     const { location, service, category } = props.startForm;
-    const entertainment =  props.getMusicians()
+    props.getEntertainment({location, service, category})
   }, []);
   return (
     <div>
-      {props.musicians.map((musician) => {
+      {props.entertainment.map((entertainment) => {
         return (
-          <div key={musician.id}>
-            <p>{musician.name}</p>
+          <div key={entertainment.id}>
+            <p>{entertainment.name}</p>
           </div>
         );
       })}
@@ -35,7 +35,7 @@ const Entertainment = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    musicians: state.musicians,
+    entertainment: state.entertainmentReducer,
     startForm: state.startFormReducer,
   };
 };

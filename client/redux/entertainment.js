@@ -12,10 +12,11 @@ const entertainmentActionCreator = (entertainment) => {
 };
 
 //thunk
-export const fetchEntertainment = (requestInfo) => {
+export const fetchEntertainment = (requestedInfo) => {
+  console.log("requestedInfo", requestedInfo);
   return async (dispatch) => {
     try {
-      const { data } = await axios.post("/api/musicians", requestInfo);
+      const { data } = await axios.post("/api/entertainment", requestedInfo);
       const businessArray = data.data.search.business;
       dispatch(entertainmentActionCreator(businessArray));
     } catch (error) {
@@ -23,7 +24,6 @@ export const fetchEntertainment = (requestInfo) => {
     }
   };
 };
-
 
 export const entertainmentReducer = (initialState = [], action) => {
   switch (action.type) {
