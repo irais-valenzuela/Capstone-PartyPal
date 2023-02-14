@@ -1,4 +1,4 @@
-const SEND_INITIAL_QUERY = 'SEND_INITIAL_QUERY';
+const SEND_INITIAL_QUERY = "SEND_INITIAL_QUERY";
 
 export const _sendInitialQuery = (initialQuery) => ({
   type: SEND_INITIAL_QUERY,
@@ -6,13 +6,16 @@ export const _sendInitialQuery = (initialQuery) => ({
 });
 
 export const sendInitialQuery = (initialQuery, history) => {
+  console.log("inital query", initialQuery.service);
   return async (dispatch) => {
     try {
       const { service } = initialQuery;
       dispatch(_sendInitialQuery(initialQuery));
-      service === 'catering'
-        ? history.push('/allCaterers')
-        : history.push('/allVenues');
+      service === "catering"
+        ? history.push("/allCaterers")
+        : service === "venue"
+        ? history.push("/allVenues")
+        : history.push("/allMusicians");
     } catch (error) {
       console.log(error);
       throw error;

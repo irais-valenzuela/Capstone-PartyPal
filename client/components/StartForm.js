@@ -55,6 +55,7 @@ const StartForm = (props) => {
   const getRecommendations = (event) => {
     event.preventDefault();
     const service = event.target.serviceOption.value;
+    console.log('service type', service)
     const location = event.target.location.value;
     const initialQuery = { service, location };
     props.sendInitialQuery(initialQuery, history);
@@ -87,7 +88,7 @@ const StartForm = (props) => {
               </div>
               <br></br>
               <FormControl variant='outlined' fullWidth>
-                <InputLabel>Please select caterer or venue</InputLabel>
+                <InputLabel>Please select caterer, venue, or entertainment</InputLabel>
                 <Select
                   name='serviceOption'
                   onChange={(e) => setServiceOptionValue(e.target.value)}
@@ -95,6 +96,7 @@ const StartForm = (props) => {
                 >
                   <MenuItem value='catering'>Caterer</MenuItem>
                   <MenuItem value='venue'>Venue</MenuItem>
+                  <MenuItem value='entertainment'>Entertainment</MenuItem>
                 </Select>
                 <br></br>
                 <div>
