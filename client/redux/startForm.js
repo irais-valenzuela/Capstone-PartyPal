@@ -6,7 +6,7 @@ export const _sendInitialQuery = (initialQuery) => ({
 });
 
 export const sendInitialQuery = (initialQuery, history) => {
-  console.log("inital query", initialQuery.service);
+  console.log("inital query", initialQuery);
   return async (dispatch) => {
     try {
       const { service } = initialQuery;
@@ -15,7 +15,7 @@ export const sendInitialQuery = (initialQuery, history) => {
         ? history.push("/allCaterers")
         : service === "venue"
         ? history.push("/allVenues")
-        : history.push("/allMusicians");
+        : history.push("/entertainment");
     } catch (error) {
       console.log(error);
       throw error;

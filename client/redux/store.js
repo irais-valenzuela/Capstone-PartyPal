@@ -11,7 +11,7 @@ import startFormReducer from "./startForm";
 import events from "./events";
 import { favorites } from "./favorites";
 import singleEvent from "./singleEvent";
-import { musicians } from "./musicians";
+import { entertainmentReducer } from "./entertainment";
 
 const reducer = combineReducers({
   auth,
@@ -23,7 +23,7 @@ const reducer = combineReducers({
   events,
   favorites,
   singleEvent,
-  musicians,
+  entertainmentReducer,
 });
 
 const store = createStore(
