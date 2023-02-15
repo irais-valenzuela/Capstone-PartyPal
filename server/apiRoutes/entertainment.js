@@ -3,7 +3,6 @@ const axios = require("axios");
 
 const TOKEN = process.env.YELP_TOKEN;
 
-// returns our query to query yelp api
 const userSearch = (userSearchInput) => {
   const { location, service, categories } = userSearchInput;
   return `{
@@ -49,7 +48,6 @@ const getRequestedEntertainment = async (userSearchInput) => {
     });
 };
 
-// need a post bcs we need to send info in req.body
 entertainmentRouter.post("/", async (req, res, next) => {
   try {
     const data = await getRequestedEntertainment(req.body);
