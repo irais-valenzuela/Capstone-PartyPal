@@ -6,7 +6,6 @@ export const _sendInitialQuery = (initialQuery) => ({
 });
 
 export const sendInitialQuery = (initialQuery, history) => {
-  console.log("inital query", initialQuery);
   return async (dispatch) => {
     try {
       const { service } = initialQuery;

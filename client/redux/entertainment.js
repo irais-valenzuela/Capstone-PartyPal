@@ -13,7 +13,6 @@ const entertainmentActionCreator = (entertainment) => {
 
 //thunk
 export const fetchEntertainment = (requestedInfo) => {
-  console.log("requestedInfo", requestedInfo);
   return async (dispatch) => {
     try {
       const { data } = await axios.post("/api/entertainment", requestedInfo);
