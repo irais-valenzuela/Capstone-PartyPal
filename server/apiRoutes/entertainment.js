@@ -52,7 +52,6 @@ const getRequestedEntertainment = async (userSearchInput) => {
 // need a post bcs we need to send info in req.body
 entertainmentRouter.post("/", async (req, res, next) => {
   try {
-    console.log('req.body', req.body)
     const data = await getRequestedEntertainment(req.body);
     res.send(data).status(200);
   } catch (error) {

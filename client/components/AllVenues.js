@@ -13,7 +13,6 @@ import Rating from '@material-ui/lab/Rating';
 import Typography from '@material-ui/core/Typography';
 
 export const AllVenues = (props) => {
-  console.log('props', props)
   const [price, setPrice] = useState(() => {
     const priceValue = window.localStorage.getItem('price');
     return priceValue !== null ? JSON.parse(priceValue) : '';
