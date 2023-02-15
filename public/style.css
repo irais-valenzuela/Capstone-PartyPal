@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=DM+Serif+Display&display=swap');
-@import 'bootstrap/dist/css/bootstrap.min.css';
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alegreya&family=Chonburi&family=Cormorant+Garamond&family=Forum&family=Goblin+One&family=Gotu&family=Limelight&family=Monoton&family=Stardos+Stencil:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=DM+Serif+Display&display=swap");
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alegreya&family=Chonburi&family=Cormorant+Garamond&family=Forum&family=Goblin+One&family=Gotu&family=Limelight&family=Monoton&family=Stardos+Stencil:wght@700&display=swap");
 
 :root {
-  --fira-sans: 'Fira Sans', sans-serif;
+  --fira-sans: "Fira Sans", sans-serif;
   /* --DM-Serif-Display-Italic: 'DM Serif Display', 'serif'; */
-  --DM-Serif-Display: 'DM Serif Display', 'serif';
-  --Cardo: 'Cardo', serif;
-  --Abril-Fatface: 'Abril Fatface', sans-serif;
+  --DM-Serif-Display: "DM Serif Display", "serif";
+  --Cardo: "Cardo", serif;
+  --Abril-Fatface: "Abril Fatface", sans-serif;
 }
 
 body,
@@ -68,7 +68,7 @@ nav h1 {
   margin-top: 3rem;
   margin-right: 3rem;
   margin-left: 3rem;
-  padding: 2rem
+  padding: 2rem;
 }
 
 h1,
@@ -91,7 +91,7 @@ label {
 #btn-submit-new-event {
   background-color: #d562be !important;
   border: none !important;
-  font-family: 'Abril Fatface';
+  font-family: "Abril Fatface";
 }
 .btn-primary:hover,
 #btn-submit-new-event:hover {
@@ -134,10 +134,8 @@ input {
 }
 
 .home-outline {
-  text-shadow:  -1px 1px 2px #605399,
-  1px 2px 6px #605399,
-  1px -1px 0 #605399,
-  -1px -1px 0 #605399;
+  text-shadow: -1px 1px 2px #605399, 1px 2px 6px #605399, 1px -1px 0 #605399,
+    -1px -1px 0 #605399;
 }
 
 #footer-design {
@@ -152,7 +150,7 @@ input {
   font-family: var(--DM-Serif-Display);
   font-weight: bold;
   font-size: large;
-  padding: 1rem
+  padding: 1rem;
 }
 
 .DM-Serif-display-font {
@@ -179,12 +177,12 @@ input {
 
 .home-tagline {
   text-align: center;
-  margin: 1rem
+  margin: 1rem;
 }
 
 .white-buttons-and-cardo {
   color: white;
-  font-family: var(--Cardo)
+  font-family: var(--Cardo);
 }
 
 .nav-flex {
@@ -194,7 +192,7 @@ input {
 }
 
 .responsive-nav {
-  width: 100%
+  width: 100%;
 }
 
 .start-form-center {
@@ -218,7 +216,7 @@ input {
 }
 
 .carousel-caption {
-  font-family: 'Abril Fatface', sans-serif;
+  font-family: "Abril Fatface", sans-serif;
   margin-bottom: 2em;
   font-weight: 700;
   text-shadow: black 1px 0 5px;
@@ -250,7 +248,8 @@ input {
   font-size: large;
 }
 
-.each-favorite-venue-container, .each-favorite-caterer-container {
+.each-favorite-venue-container,
+.each-favorite-caterer-container {
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
@@ -319,4 +318,13 @@ input {
   width: 18rem;
   height: 18rem;
   object-fit: cover;
+}
+
+.what-we-do {
+  text-align: "center";
+  font-size: 30px;
+  margin: 4rem;
+  background-color: pink;
+  padding: 5rem;
+  border-radius: 2rem;
 }
